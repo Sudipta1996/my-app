@@ -24,6 +24,10 @@ const Register = () => {
 
     return (
         <>
+        <div class="container">
+          
+          <div className="card col-8 col-lg-4 login-card mt-2 hv-center"> 
+          <form>
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Name</label>
                 <input type="text" class="form-control" name="name"  value={Reg.name} onChange={(e)=>dispatch(Name(e.target.value))} />
@@ -38,6 +42,10 @@ const Register = () => {
 
             </div>
             <Link to="/login"><button onClick={submit}>Submit</button></Link>
+            </form>
+            </div>
+            
+           </div>
 
         </>
     )

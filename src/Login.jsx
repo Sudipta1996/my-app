@@ -32,9 +32,13 @@ const Login=()=>{
 
     }
     return(
-        <>
-             
+        
+        <div class="container">
+          
+          <div className="card col-8 col-lg-4 login-card mt-2 hv-center"> 
+          <form>
             <div class="mb-3">
+            
                 <label for="exampleFormControlInput1" class="form-label">Email address</label>
                 <input type="text" class="form-control" name="email" value={Reg.email}  onChange={(e)=>dispatch(Email(e.target.value))} />
             </div>
@@ -43,8 +47,13 @@ const Login=()=>{
                 <input type="password" class="form-control" name="password" value={Reg.password}  onChange={(e)=>dispatch(Pass(e.target.value))} />
 
             </div>
+            
             <button onClick={submit}>Login</button>
-        </>
+            </form>
+            </div>
+            
+           </div>
+        
     )
 }
 export default Login;
