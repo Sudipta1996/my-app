@@ -1,0 +1,93 @@
+GET http://localhost:4000/students HTTP/1.1
+content-type: application/json
+
+{
+    "roll":"",
+    "name": "debo",
+    "email": "email@email.com",
+    "courses": "js",
+    "date":[],
+}
+
+POST http://localhost:4000/users HTTP/1.1
+content-type: application/json
+
+{
+    "fullname": "debo",
+    "email": "email@email.com",
+    "password": "js",
+    "role":"student"
+}
+
+GET http://localhost:4000/login HTTP/1.1
+content-type: application/json
+
+{
+    "name": "debo",
+    "email": "email@email.com",
+    "password": "js"
+}
+
+POST http://localhost:4000/feedback HTTP/1.1
+content-type: application/json
+
+{
+    "name":"",
+    "email":"",
+    "rating":"",
+    "comments":"",
+}
+
+POST http://localhost:4000/contacts HTTP/1.1
+content-type: application/json
+
+{
+    "name":"",
+    "email":"",
+    "message":"",
+}
+
+PUT http://localhost:4000/students/123 HTTP/1.1
+content-type: application/json
+
+{
+    "roll":"",
+    "name": "debo",
+    "email": "email@email.com",
+    "courses": "js",
+    "date":[],
+}
+
+
+GET http://localhost:4000/students/123 HTTP/1.1
+
+
+DELETE http://localhost:4000/students/123 HTTP/1.1
+
+
+POST http://localhost:4000/students HTTP/1.1
+content-type: application/json
+
+{
+    "roll":"",
+    "name": "debo",
+    "email": "email@email.com",
+    "courses": "js",
+    "date":[],
+}
+
+GET http://localhost:4000/feedback HTTP/1.1
+content-type: application/json
+
+{
+    "name":"",
+    "email":"",
+    "rating":"",
+    "comments":"",
+}
+
+
+
+
+
+
