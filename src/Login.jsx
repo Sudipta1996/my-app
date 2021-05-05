@@ -7,7 +7,6 @@ import {useHistory,Link} from "react-router-dom";
 const Login=()=>{
 
     const state=useSelector(state=>state);
-    //const{Reg,Data}=state;
     const dispatch=useDispatch();
     const{Reg,Data}=state;
     useEffect(()=>{
@@ -15,17 +14,23 @@ const Login=()=>{
     },[])
    
     let history=useHistory();
-    let a=true,b=0;
+    let y=true,b=0;
     const submit=()=>{
         for(let i=0;i<Data.length;i++)
         {   b++;
             if(Data[i].email===Reg.email && Data[i].password===Reg.password)
-            {   a=false;
-                console.log("sucessfully")
-                 history.push("/home");
+            {   y=false;
+                if(Data[i].role=="Student")
+                {
+                    history.push("/student");
+                }
+                else if(Data[i].role=="Teacher")
+                {
+                    history.push("/teacher")
+                }
             }
         }
-        if(a===true && b>0)
+        if(y===true && b>0)
         {
             alert("invalid email or password")
         }
@@ -49,6 +54,9 @@ const Login=()=>{
             </div>
             
             <button onClick={submit}>Login</button>
+            <Link to="/register"><button type="button" className="btn btn-warning">
+            Register
+          </button></Link>
             </form>
             </div>
             

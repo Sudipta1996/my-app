@@ -7,8 +7,9 @@ const initial={
     name:"",
     email:"",
     password:"",
+    role:""
 }
-const Regreducer=(state=initial,action)=>{
+const RegisterReducer=(state=initial,action)=>{
     switch(action.type)
     {
         case "name": return{
@@ -23,6 +24,10 @@ const Regreducer=(state=initial,action)=>{
             ...state,
             password:action.payload,
         }
+        case "role":return{
+            ...state,
+            role:action.payload,
+        }
         default: return state
     }
 }
@@ -35,7 +40,7 @@ const Datareducer=(state=[],action)=>{
 }
 
 const rootReducer=combineReducers({
-    Reg: Regreducer,
+    Reg: RegisterReducer,
     Data:Datareducer
 })
 export const store=createStore(rootReducer,composeWithDevTools(applyMiddleware(thunk)));
@@ -49,7 +54,7 @@ export const getData=(payload)=>{
 }
 export const getFetch=()=>{
     return(dispatch)=>{
-        axios.get("http://localhost:4000/registers").then(res=>{
+        axios.get("http://localhost:4000/user").then(res=>{
             dispatch(getData(res.data))
         })
     }
@@ -69,6 +74,12 @@ export const Email=(e)=>{
 export const Pass=(e)=>{
     return{
         type: "password",
+        payload: e
+    }
+}
+export const Role=(e)=>{
+    return{
+        type: "role",
         payload: e
     }
 }
